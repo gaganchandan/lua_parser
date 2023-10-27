@@ -1,7 +1,4 @@
 import ply.lex as lex
-import ply.yacc as yacc
-
-# Parser for Lua 5.1
 
 reserved = {
     'and': 'AND',
