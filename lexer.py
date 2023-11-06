@@ -24,11 +24,11 @@ reserved = {
     'while': 'WHILE'
 }
 
-tokens = ['ID', 'NUMBER', 'STRING', 'PLUS', 'MINUS', 'TIMES', 'DIVIDE',
+tokens = ['NAME', 'NUMBER', 'STRING', 'PLUS', 'MINUS', 'TIMES', 'DIVIDE',
           'MODULO', 'LEN', 'EXPONENT', 'EQ', 'NEQ', 'LTE', 'GTE', 'LT',
           'GT', 'ASSIGN', 'LPAREN', 'RPAREN', 'LBRACE', 'RBRACE',
           'LBRACKET', 'RBRACKET', 'SEMICOLON', 'COLON', 'COMMA', 'DOT',
-          'CONCAT', 'ELIPSIS']
+          'CONCAT', 'ELLIPSIS']
 tokens += list(reserved.values())
 
 t_PLUS = r'\+'
@@ -56,12 +56,12 @@ t_COLON = r':'
 t_COMMA = r','
 t_DOT = r'\.'
 t_CONCAT = r'\.\.'
-t_ELIPSIS = r'\.\.\.'
+t_ELLIPSIS = r'\.\.\.'
 
 
-def t_ID(t):
+def t_NAME(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
-    t.type = reserved.get(t.value, 'ID')
+    t.type = reserved.get(t.value, 'NAME')
     return t
 
 
